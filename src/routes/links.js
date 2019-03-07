@@ -17,4 +17,10 @@ router.post('/add', async (req, res) => {
   res.send('Recibido');
 });
 
+router.get('/', async (req, res) => {
+  const links = await db.query('SELECT * FROM links');
+  console.log(links);
+  res.render('links/list', {links: links});
+});
+
 module.exports = router;
