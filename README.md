@@ -16,7 +16,7 @@ npm install
 <a href="https://www.mysql.com/"><img src="https://raw.githubusercontent.com/BorjaG90/media/master/img/logos/mysql.png" width=50 alt="MySQL"></a>
 
 ### Frontend
-
+<a href="https://www.getbootstrap.com/"><img src="https://raw.githubusercontent.com/BorjaG90/media/master/img/logos/bootstrap.png" width=50 alt="Bootstrap4"></a>
 ### Platforms
 
 <a href="https://code.visualstudio.com/"><img src="https://raw.githubusercontent.com/BorjaG90/media/master/img/logos/vscode.png" width=50 alt="VSCode"></a>
