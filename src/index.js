@@ -29,7 +29,7 @@ app.use(session({
   saveUninitialized: false,
   store: new mySQLStore(database)
 }));
-app.use(flash);
+app.use(flash());
 app.use(morgan('dev'));
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
