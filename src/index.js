@@ -1,4 +1,5 @@
 const express   = require('express'),
+      flash     = require('connect-flash'),
       hbs       = require('express-handlebars'),
       morgan    = require('morgan'),
       path      = require('path');
@@ -22,10 +23,11 @@ app.set('view engine', '.hbs');
 app.use(morgan('dev'));
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
+app.use(flash);
 
 // Global
 app.use((req, res, next) => {
-
+  app.locals.success = req.flash('success');
   next();
 });
 

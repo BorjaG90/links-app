@@ -14,6 +14,7 @@ router.post('/add', async (req, res) => {
     description
   };
   await db.query('INSERT INTO links set ?', [newLink]);
+  req.flash('success', 'Link saved succesfully');
   res.redirect('/links');
 });
 
