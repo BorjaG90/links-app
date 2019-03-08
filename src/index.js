@@ -1,8 +1,12 @@
-const express   = require('express'),
-      hbs       = require('express-handlebars'),
-      morgan    = require('morgan'),
-      path      = require('path');
+const express     = require('express'),
+      flash       = require('connect-flash'),
+      hbs         = require('express-handlebars'),
+      morgan      = require('morgan'),
+      mySQLStore  = require('express-mysql-session'),
+      path        = require('path'),
+      session     = require('express-session');
 
+const { database } = require('./keys');
 // Init
 const app =express();
 
@@ -19,13 +23,20 @@ app.engine('.hbs', hbs({
 app.set('view engine', '.hbs');
 
 // Middleware
+app.use(session({
+  secret: 'faztmysqlnodesession',
+  resave: false,
+  saveUninitialized: false,
+  store: new mySQLStore(database)
+}));
+app.use(flash());
 app.use(morgan('dev'));
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 
 // Global
 app.use((req, res, next) => {
-
+  app.locals.success = req.flash('success');
   next();
 });
 
