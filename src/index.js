@@ -3,12 +3,14 @@ const express     = require('express'),
       hbs         = require('express-handlebars'),
       morgan      = require('morgan'),
       mySQLStore  = require('express-mysql-session'),
+      passport    = require('passport'),
       path        = require('path'),
       session     = require('express-session');
 
 const { database } = require('./keys');
 // Init
 const app =express();
+require('./lib/passport');
 
 // Settings
 app.set('port', process.env.PORT || 4000);
@@ -33,6 +35,8 @@ app.use(flash());
 app.use(morgan('dev'));
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Global
 app.use((req, res, next) => {
