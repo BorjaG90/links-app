@@ -19,10 +19,15 @@ passport.use('local.signup', new Strategy({
 
   const result = await db.query('INSERT INTO users SET ?', [newUser]);
   newUser.id = result.insertId;
-  
+
   return done(null, newUser);
 }));
 
 passport.serializeUser((user, done) => {
-
+  done(null, user.id);
 })
+
+passport.deserializeUser(async(id, done) => {
+  const rows = await db.query('SELECT * FROM users WHERE id = ?', [id]);
+  done(null, rows[0]);
+});
