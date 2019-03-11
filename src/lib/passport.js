@@ -1,11 +1,10 @@
 const passport  = require('passport'),
       Strategy  = require('passport-local').Strategy;
 
-passport.use('local.signup', new LocalStrategy({
+passport.use('local.signup', new Strategy({
   usernameField: 'username',
   passwordField: 'password',
-  passReqToCallback: True //Recibir más campos
+  passReqToCallback: true //Recibir más campos
 }, async (req, username, password, done)=>{ //CallBack
-
   done();
 }));
