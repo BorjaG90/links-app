@@ -1,4 +1,9 @@
 # links-app
+
+
+![](https://img.shields.io/badge/Maintained-No-blue.svg)
+![](https://img.shields.io/badge/Status-Close-green.svg)
+
 A simple Links app in NodeJS with the purpose of practicing &amp; learning 
 
 Following the video course [Nodejs y Mysql, Aplicación Completa](https://www.youtube.com/watch?v=qJ5R9WTW0_E) by [Fazt](https://github.com/FaztTech)
