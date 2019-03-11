@@ -8,6 +8,30 @@ Following the video course [Nodejs y Mysql, Aplicación Completa](https://www.yo
 npm install
 ```
 
+## Features
+* Authentication:
+  
+  * User login with username and password
+  
+* Authorization:
+
+  * One cannot manage links and view user profile without being authenticated
+
+  * One cannot edit or delete links created by other users
+
+* Manage campground posts with basic functionalities:
+
+  * Create, edit and delete Links
+
+* Manage user account with basic functionalities:
+
+  * Profile page setup with sign-up
+
+* Flash messages responding to users' interaction with the app
+
+* Responsive web design
+
+
 ## Built With
 ### Backend
 <a href="https://www.javascript.com/"><img src="https://raw.githubusercontent.com/BorjaG90/media/master/img/logos/javascript.jpeg" width=50 alt="JavaScript"></a>
